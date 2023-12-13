@@ -16,5 +16,5 @@ EXPOSE 3333
 # Command to run the server
 CMD ["ruby", "server.rb"]
 
-#new command
+
 
