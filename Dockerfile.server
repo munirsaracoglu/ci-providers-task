@@ -1,0 +1,20 @@
+# Use Ruby image as the base image
+FROM ruby
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the server.rb file into the container
+COPY server.rb .
+
+# Install necessary gems
+RUN gem install sinatra webrick
+
+# Expose the port that the server will run on
+EXPOSE 3333
+
+# Command to run the server
+CMD ["ruby", "server.rb"]
+
+#new command
+

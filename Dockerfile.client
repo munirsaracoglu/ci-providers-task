@@ -1,0 +1,15 @@
+# Use Ruby image as the base image
+FROM ruby:latest
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the client.rb file into the container
+COPY client.rb .
+
+# Install necessary gems
+RUN gem install httparty
+
+# Command to run the client
+CMD ["ruby", "client.rb"]
+
