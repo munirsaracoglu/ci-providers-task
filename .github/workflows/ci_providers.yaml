@@ -25,12 +25,12 @@ jobs:
         
       - name: Run server container
         run: |
-          docker run -d --name server-container server-image
+          docker run -d -p 3333:3333 --name server-container server-image
           sleep 5
           
       - name: Run client container
         run: |
-          docker run -d --name client-container client-image
+          docker run -d --network host --name client-container client-image
           sleep 5
           
       - name: Check server logs
