@@ -15,13 +15,13 @@ jobs:
     steps:
       
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         
       - name: Build server Docker image
-        run: docker build -t server-image .
+        run: docker build . --file Dockerfile.server --tag server-image 
         
       - name: Build client Docker image
-        run: docker build -t client-image .
+        run: docker build . --file Dockerfile.client --tag client-image
         
       - name: Run server container
         run: |
