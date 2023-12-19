@@ -15,3 +15,5 @@ response = HTTParty.post(server_url, body: { text: random_text })
 
 # Print the response
 puts response.code
+
+#something
